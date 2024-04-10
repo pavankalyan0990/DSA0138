@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+  int num=153,originalnu,rem,result=0;
+  originalnu=num;
+  while(originalnu!=0)
+  {
+    rem=originalnu%10;
+    result+=rem*rem*rem;
+    originalnu/=10;
+  }
+  if(result=num)
+  {
+    cout<<num<<" is a armstrong number"<<endl;
+  }
+  else
+  {
+    cout<<num<<" isnot a armstrong number"<<endl;
+  }
+  return 0;
+  }
