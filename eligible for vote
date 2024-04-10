@@ -1,0 +1,14 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int a=9;
+	if(a>=18){
+cout<<"eligible for vote"<<endl;
+}
+else
+{
+	cout<<"not eligible for vote"<<" eligible after "<<18-a<<"year"<<endl;
+}
+return 0;
+}
