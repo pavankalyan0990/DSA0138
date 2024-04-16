@@ -1,0 +1,41 @@
+Question
+Bank Account Class: Create a C++ class representing a bank account with functionalities such as deposit, withdrawal, and balance inquiry.
+Sample Input:
+Account Number: 1234567890
+Account Holder Name: John Doe
+Balance: 5000
+Deposits: 2000
+Withdraw: 1000
+Sample Output:
+Account Number: 1234567890
+Account Holder Name: John Doe
+Balance: 6000
+program 
+ #include<iostream>
+using namespace std;
+class bankaccount
+{
+    public:
+    int accountnumber ;
+    char accountholdername;
+    int balance;
+    int deposits;
+    int withdraw;
+    int calculatebalance()
+    {
+        return balance+deposits-withdraw;
+    }
+};
+int main()
+{
+    bankaccount  b1;
+    b1.accountnumber=1234567890;
+    b1.accountholdername;
+    b1.balance=5000;
+    b1.deposits=2000;
+    b1.withdraw=1000;
+    cout<<"account number="<<b1.accountnumber<<endl;
+    cout<<"account holder name=pavan"<<endl;
+   cout<<"balance="<<b1.calculatebalance()<<endl;
+    return 0;
+}
