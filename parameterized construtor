@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+class wall
+{
+    private:
+    double length;
+    double heigth;
+    public:
+    wall(double len,double hgt)
+    {
+        length=len;
+        heigth=hgt;
+    }
+    double calculatearea()
+    {
+        return length*heigth;
+    }
+};
+int main()
+{
+    wall w1(10.5,8.6);
+    cout<<"area of wall "<<w1.calculatearea();
+    return 0;
+}
