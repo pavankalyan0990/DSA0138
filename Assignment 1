@@ -1,0 +1,109 @@
+Q1 :-write a cpp program to find the square root and cube root of a number 
+square root input :1296
+cube root input :27
+program:-
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+    int a, b;
+    cout << "Enter the value of a: ";
+    cin >> a;
+cout << "Enter the value of b: ";
+    cin >> b;
+    double squareRoot = sqrt(a);
+    double cubeRoot = cbrt(b);
+    cout << "Square root of " << a << " is: " << squareRoot << endl;
+    cout << "Cube root of " << b << " is: " << cubeRoot << endl;
+    return 0;
+}
+Q2:-write a cpp program to print the area and perimeter of a triangle having sides of 3,4,and5 units by creating a class name triangle with a function to print the area and perimeter
+program:-
+#include <iostream>
+#include <cmath>
+using namespace std;
+class Triangle {
+private:
+    double side1;
+    double side2;
+    double side3;
+public:
+    Triangle(double s1, double s2, double s3) : side1(s1), side2(s2), side3(s3) {}
+    double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+    double calculateArea() {
+        double s = calculatePerimeter() / 2;
+        return sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+    void printDetails() {
+        cout << "Triangle sides: " << side1 << ", " << side2 << ", " << side3 << endl;
+        cout << "Perimeter: " << calculatePerimeter() << " units" << endl;
+        cout << "Area: " << calculateArea() << " square units" << endl;
+    }
+};
+int main() {
+    Triangle triangle(3, 4, 5);
+    triangle.printDetails();
+    return 0;
+}
+Q3:-Give an unsorted array and an element x  in the given array
+write a recursive c++ code for those
+If the element is not present, return -1
+input={12, 34,54,2,3}
+x=11
+program:-
+#include <iostream>
+#include <vector>
+using namespace std;
+int searchElement(const vector<int>& arr, int x, int index) {
+    if (index == arr.size()) {
+        return -1;  // Element not found
+    }
+    if (arr[index] == x) {
+        return index;  // Element found at this index
+    }
+    return searchElement(arr, x, index + 1);  // Recursive call to search in the rest of the array
+}
+int main() {
+    vector<int> input = {12, 34, 54, 2, 3};
+    int x = 11;
+    int result = searchElement(input, x, 0);
+    if (result != -1) {
+        cout << "Element " << x << " found at index " << result << endl;
+    } else {
+        cout << "Element " << x << " not found in the array" << endl;
+    }
+    return 0;
+}
+Q4:-created a class 'degree 'having a function get degree that print "I got degree" it has two sub class namelly 'undergraduat'and 'postgraduate'each having a function with the same name that  print "I am an undergraduate" and 'I am a postgraduate' respectively call the function by creating an object of each of the three classes
+program:-
+#include <iostream>
+using namespace std;
+class Degree {
+public:
+    void getDegree() {
+        cout << "I got a degree" << endl;
+    }
+};
+class Undergraduate : public Degree {
+public:
+    void getDegree() {
+        cout << "I am an undergraduate" << endl;
+    }
+};
+class Postgraduate : public Degree {
+public:
+    void getDegree() {
+        cout << "I am a postgraduate" << endl;
+    }
+};
+int main() {
+    Degree degreeObj;
+    Undergraduate undergradObj;
+    Postgraduate postgradObj;
+    degreeObj.getDegree();      
+    undergradObj.getDegr;
+    postgradObj.getDegree();    
+    return 0;
+}
