@@ -25,11 +25,11 @@ int main() {
     int side, length, breadth;
     cout << "Enter the side length of the square: ";
     cin >> side;
-    cout << "Enter the length and breadth of the rectangle (separated by comma): ";
+    cout << "Enter the length and breadth of the rectangle ";
     cin >> length >> breadth;
     AreaCalculator calculator;
-    calculator.calculateArea(side);        // Calculate and print area of square
-    calculator.calculateArea(length, breadth);  // Calculate and print area of rectangle
+    calculator.calculateArea(side);        
+    calculator.calculateArea(length, breadth); 
     return 0;
 }
 Q2:-write a c++program to find area of circle, rectangle and triangle using constructor overloading
@@ -44,62 +44,46 @@ output:-
 program:-
 #include <iostream>
 #include <cmath>
-
 using namespace std;
-
 class Shape {
 public:
     // Default constructor
     Shape() {}
-
     // Constructor for circle
     Shape(double radius) {
         area = M_PI * radius * radius;
     }
-
     // Constructor for rectangle
     Shape(double length, double breadth) {
         area = length * breadth;
     }
-
     // Constructor for triangle
     Shape(double base, double height, bool isTriangle) {
         area = 0.5 * base * height;
     }
-
     void printArea() {
         cout << "Area: " << area << " square units" << endl;
     }
-
 private:
     double area;
 };
-
 int main() {
     double radius, length, breadth, base, height;
-
     cout << "Enter the radius of the circle: ";
     cin >> radius;
-
     cout << "Enter the length and breadth of the rectangle (separated by comma): ";
     cin >> length >> breadth;
-
     cout << "Enter the base and height of the triangle (separated by comma): ";
     cin >> base >> height;
-
     Shape circle(radius);
     Shape rectangle(length, breadth);
     Shape triangle(base, height, true);
-
     cout << "Circle ";
     circle.printArea();
-
     cout << "Rectangle ";
     rectangle.printArea();
-
     cout << "Triangle ";
     triangle.printArea();
-
     return 0;
 }
 Q3:-write a cpp program to enter the marks of a student in five subject. then calculate the total and aggregate, display the grade obtain by the student. 
@@ -110,33 +94,26 @@ average marks=50
 grade third division
 program:-
 #include <iostream>
-
 using namespace std;
-
 class Student {
 private:
-    int marks[5];  // Array to store marks in five subjects
+    int marks[5]; 
     int totalMarks;
     double aggregate;
-
 public:
-    // Constructor to initialize marks and calculate total and aggregate
     Student(int m1, int m2, int m3, int m4, int m5) {
         marks[0] = m1;
         marks[1] = m2;
         marks[2] = m3;
         marks[3] = m4;
         marks[4] = m5;
-
         totalMarks = m1 + m2 + m3 + m4 + m5;
         aggregate = totalMarks / 5.0;  // Assuming 5 subjects
     }
-
     // Function to calculate and display grade based on aggregate
     void displayGrade() {
         cout << "Total Marks: " << totalMarks << endl;
         cout << "Aggregate: " << aggregate << endl;
-
         if (aggregate >= 90) {
             cout << "Grade: A+" << endl;
         } else if (aggregate >= 80) {
@@ -152,16 +129,12 @@ public:
         }
     }
 };
-
 int main() {
     int m1, m2, m3, m4, m5;
-
     cout << "Enter marks in five subjects (separated by spaces): ";
     cin >> m1 >> m2 >> m3 >> m4 >> m5;
-
     Student student(m1, m2, m3, m4, m5);
     student.displayGrade();
-
     return 0;
 }
 Q4:-create a class called FLOAT contaimsone float data member overload so that they operate on the objects of FLOAT 
