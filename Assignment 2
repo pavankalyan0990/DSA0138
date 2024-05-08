@@ -47,17 +47,13 @@ program:-
 using namespace std;
 class Shape {
 public:
-    // Default constructor
     Shape() {}
-    // Constructor for circle
     Shape(double radius) {
         area = M_PI * radius * radius;
     }
-    // Constructor for rectangle
     Shape(double length, double breadth) {
         area = length * breadth;
     }
-    // Constructor for triangle
     Shape(double base, double height, bool isTriangle) {
         area = 0.5 * base * height;
     }
