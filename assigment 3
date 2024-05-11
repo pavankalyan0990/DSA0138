@@ -1,0 +1,30 @@
+Q1:- Minimum Jumps To Reach End of an Array:
+Given an array of non-negative integers, A, of length N. You are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position.
+Return the minimum number of jumps required to reach the last index.
+If it is not possible to reach the last index, return -1
+Input: arr[] = [1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
+Output: 3
+program:-
+#include <iostream>
+#include <vector>
+using namespace std;
+int jump(vector<int>& nums) {
+    int n = nums.size();
+    if (n <= 1) return 0;
+    int jumps = 0, maxReach = 0, end = 0;
+    for (int i = 0; i < n - 1; i++) {
+        maxReach = max(maxReach, i + nums[i]);  
+        if (i == end) {
+            jumps++;
+            end = maxReach;
+        }
+    }
+    return (end >= n - 1) ? jumps : -1;
+}
+int main() {
+    vector<int> nums = {1,3,5,8,9,2,6,7,6,8,9};
+    int result = jump(nums);
+    cout << "Minimum jumps required: " << result << endl;
+    return 0;
+}
+Q2:-
